@@ -41,6 +41,13 @@ public class Display extends AppCompatActivity {
         eventsList=new ArrayList<>();
 
         primaryKeyList=new ArrayList<>();
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent=new Intent(Display.this,check.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
@@ -55,7 +62,16 @@ public class Display extends AppCompatActivity {
                 for(DataSnapshot ds : dataSnapshot.getChildren())
                 {
                     Events event=ds.getValue(Events.class);
-                    eventsList.add(event);
+
+                    String m=event.getStatus();
+                    if(m.equals("Approved"))
+                    {
+                        eventsList.add(event);
+                    }
+                    if(m.equals("Pending"))
+                    {
+                        eventsList.add(event);
+                    }
 
                 }
 
