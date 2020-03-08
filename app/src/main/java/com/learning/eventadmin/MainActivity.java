@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     EditText eventOrganisedBy;
     EditText eventTime;
     EditText contactInfo;
+    EditText ticketp;
     FirebaseDatabase database;
     DatabaseReference ref;
     FirebaseAuth mAuth;
@@ -48,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         eventOrganisedBy=findViewById(R.id.eventOrganisedBy);
         eventTime=findViewById(R.id.eventStartingTime);
         contactInfo=findViewById(R.id.eventContactInfo);
+        ticketp=findViewById(R.id.eventPrice);
         database=FirebaseDatabase.getInstance();
         ref=database.getReference("Events");
         mAuth = FirebaseAuth.getInstance();
@@ -80,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
         String enddate=eventEndingDate.getText().toString();
         String starttime=eventTime.getText().toString();
         String contactinfo=contactInfo.getText().toString();
+        String ticketprice= ticketp.getText().toString();
 
         if(name.isEmpty())
         {
@@ -130,11 +133,18 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
+        if(ticketprice.isEmpty())
+        {
+            ticketp.setError("price is required");
+            ticketp.requestFocus();
+            return;
+        }
+
         String id=ref.push().getKey();
         Toast toast=Toast.makeText(MainActivity.this,"Request Sent",Toast.LENGTH_SHORT);
         toast.show();
 
-        Events event=new Events(name,id,organisedby,startdate,enddate,starttime,contactinfo,venue);
+        Events event=new Events(name,id,organisedby,startdate,enddate,starttime,contactinfo,venue,ticketprice);
         ref.child(id).setValue(event);
     }
 

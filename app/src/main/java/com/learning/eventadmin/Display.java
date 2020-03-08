@@ -28,6 +28,7 @@ public class Display extends AppCompatActivity {
     List<Events> eventsList;
     Button button;
     List<String> primaryKeyList;
+    public static final String EVENT_ID="";
 
 
 
@@ -44,7 +45,10 @@ public class Display extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Events event=eventsList.get(position);
                 Intent intent=new Intent(Display.this,check.class);
+                intent.putExtra(EVENT_ID,event.getId());
                 startActivity(intent);
             }
         });

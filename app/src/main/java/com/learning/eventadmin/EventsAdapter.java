@@ -23,7 +23,7 @@ public class EventsAdapter extends ArrayAdapter<Events> {
 
     private Activity context;
     private List<Events> list;
-    private DatabaseReference ref= FirebaseDatabase.getInstance().getReference("Events");;
+    private DatabaseReference ref= FirebaseDatabase.getInstance().getReference("Events");
 
     public EventsAdapter(Activity context,List<Events> list)
     {   super(context,R.layout.single_event_info_layout,list);
@@ -45,6 +45,7 @@ public class EventsAdapter extends ArrayAdapter<Events> {
         TextView EnddateD=(TextView)listviewitem.findViewById(R.id.EnddateD);
         TextView PhoneD=(TextView)listviewitem.findViewById(R.id.phoneD);
         TextView StatusD=(TextView)listviewitem.findViewById(R.id.statusD);
+        TextView PriceD=(TextView)listviewitem.findViewById(R.id.ticketpriceD);
 
 
 
@@ -58,6 +59,7 @@ public class EventsAdapter extends ArrayAdapter<Events> {
         EnddateD.setText(event.getEnddate());
         PhoneD.setText(event.getContactinfo());
         StatusD.setText(event.getStatus());
+        PriceD.setText(event.getTicketprice());
 
 
 
