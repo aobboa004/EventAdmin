@@ -2,70 +2,80 @@ package com.learning.eventadmin;
 
 public class Clients {
 
-    private String ClientID;
-    private String ClientName;
-    private String ClientCollege;
-    private String ClientCollegeStudentID;
-    private String ClientEmail;
-    private String ClientPhoneNumber;
+    private String clientID;
+    private String clientName;
+    private String clientCollege;
+    private String clientCollegeStudentID;
+    private String clientEmail;
+    private String clientPhoneNumber;
+    private String eventIDj;
 
     public Clients() {
     }
 
-    public Clients(String clientID, String clientName, String clientCollege, String clientCollegeStudentID, String clientEmail, String clientPhoneNumber) {
-        ClientID = clientID;
-        ClientName = clientName;
-        ClientCollege = clientCollege;
-        ClientCollegeStudentID = clientCollegeStudentID;
-        ClientEmail = clientEmail;
-        ClientPhoneNumber = clientPhoneNumber;
+    public Clients(String clientID, String clientName, String clientCollege, String clientCollegeStudentID, String clientEmail, String clientPhoneNumber,String eventIDj) {
+        this.clientID = clientID;
+        this.clientName = clientName;
+        this.clientCollege = clientCollege;
+        this.clientCollegeStudentID = clientCollegeStudentID;
+        this.clientEmail = clientEmail;
+        this.clientPhoneNumber = clientPhoneNumber;
+        this.eventIDj=eventIDj;
+    }
+
+    public String getEventIDj() {
+        return eventIDj;
+    }
+
+    public void setEventIDj(String eventIDj) {
+        this.eventIDj = eventIDj;
     }
 
     public String getClientID() {
-        return ClientID;
+        return clientID;
     }
 
     public void setClientID(String clientID) {
-        ClientID = clientID;
+        this.clientID = clientID;
     }
 
     public String getClientName() {
-        return ClientName;
+        return clientName;
     }
 
     public void setClientName(String clientName) {
-        ClientName = clientName;
+        this.clientName = clientName;
     }
 
     public String getClientCollege() {
-        return ClientCollege;
+        return clientCollege;
     }
 
     public void setClientCollege(String clientCollege) {
-        ClientCollege = clientCollege;
+        this.clientCollege = clientCollege;
     }
 
     public String getClientCollegeStudentID() {
-        return ClientCollegeStudentID;
+        return clientCollegeStudentID;
     }
 
     public void setClientCollegeStudentID(String clientCollegeStudentID) {
-        ClientCollegeStudentID = clientCollegeStudentID;
+        this.clientCollegeStudentID = clientCollegeStudentID;
     }
 
     public String getClientEmail() {
-        return ClientEmail;
+        return clientEmail;
     }
 
     public void setClientEmail(String clientEmail) {
-        ClientEmail = clientEmail;
+        this.clientEmail = clientEmail;
     }
 
     public String getClientPhoneNumber() {
-        return ClientPhoneNumber;
+        return clientPhoneNumber;
     }
 
     public void setClientPhoneNumber(String clientPhoneNumber) {
-        ClientPhoneNumber = clientPhoneNumber;
+        this.clientPhoneNumber = clientPhoneNumber;
     }
 }
